@@ -1,20 +1,8 @@
-# React + Webpack + TS Boilerplate
+# simple-icons-md-insert
 
-Webpack을 기반으로 React, TS와 prettier, eslint를 적용한 boilerplate 입니다.
+markdown 작성 시 [simple-icons](https://github.com/simple-icons/simple-icons) 태그를 삽입해주는 chrome extension입니다.
+[webpack-react-boilerplate](https://github.com/SeungheonShin/webpack-react-boilerplate) repo를 기반으로 제작했습니다.
 
-## Packages
+## Reference
 
-- webpack
-- babel
-- react
-- typescript
-- prettier
-- eslint
-
-## Plugins
-
-- babel-loader
-- ts-loader
-- webpack-dev-server
-- html-webpack-plugin
-- clean-webpack-plugin
+- [simple-icons](https://github.com/simple-icons/simple-icons)
