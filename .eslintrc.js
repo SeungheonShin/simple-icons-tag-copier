@@ -16,7 +16,7 @@ module.exports = {
     sourceType: 'module',
     tsconfigRootDir: __dirname,
   },
-  ignorePatterns: ['.eslintrc.js', 'webpack.config.js'],
+  ignorePatterns: ['.eslintrc.js', 'webpack.config.js', 'babel.config.js'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'warn',
   },
