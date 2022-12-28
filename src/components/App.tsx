@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 import styled from 'styled-components';
 import * as icons from 'simple-icons';
 import type { SimpleIcon } from 'simple-icons';
@@ -26,14 +26,15 @@ const Section = styled.section`
   width: 400px;
 `;
 
+const IconStyleContext = createContext('');
+
 export default function App(): JSX.Element {
   const [keyword, setKeyword] = useState<string>('');
 
   const simpleIcons: SimpleIconProps[] = Object.values(icons)
-    .map(({ title, slug, hex, svg }: SimpleIcon) => {
+    .map(({ title, hex, svg }: SimpleIcon) => {
       return {
         title,
-        slug,
         hex,
         svg,
       };
@@ -47,7 +48,9 @@ export default function App(): JSX.Element {
       </Header>
 
       <Section>
-        <IconList icons={simpleIcons} />
+        <IconStyleContext.Provider value="flat-square">
+          <IconList icons={simpleIcons} />
+        </IconStyleContext.Provider>
       </Section>
     </MainContent>
   );

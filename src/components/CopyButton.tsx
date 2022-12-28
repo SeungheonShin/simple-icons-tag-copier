@@ -13,17 +13,24 @@ const Button = styled.button`
 `;
 
 interface CopyButtonProps {
+  title: string;
   hex: string;
-  name: string;
 }
 
-export default function CopyButton({
+const onClickHandler = async ({
+  title,
   hex,
-  name,
+}: CopyButtonProps): Promise<void> => {
+  const tagStr = `<img src="https://img.shields.io/badge/${title}-${hex}?style=flat-square&logo=${title}&logoColor=white"/>`;
+  await navigator.clipboard.writeText(tagStr);
+};
+
+export default function CopyButton({
+  title,
+  hex,
 }: CopyButtonProps): JSX.Element {
   return (
-    <Button>
-      <p>{name}</p>
+    <Button onClick={(): Promise<void> => onClickHandler({ title, hex })}>
       <p>#{hex}</p>
     </Button>
   );

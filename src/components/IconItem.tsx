@@ -35,7 +35,6 @@ const Title = styled.p`
 
 export default function IconItem({
   title,
-  slug,
   hex,
   svg,
 }: SimpleIconProps): JSX.Element {
@@ -45,10 +44,10 @@ export default function IconItem({
       <Title>{title}</Title>
       <MenuBar>
         <Menu>
-          <CopyButton hex={hex} name={'light'} />
+          <CopyButton hex={hex} title={title} />
         </Menu>
         <Menu>
-          <CopyButton hex={hex} name={'dark'} />
+          <CopyButton hex={hex} title={title} />
         </Menu>
       </MenuBar>
     </ItemCard>
