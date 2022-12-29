@@ -1,10 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Simple Icons Insert",
-  "description": "Simple Icons Insert helper for markdown",
+  "name": "Simple Icons Tag Copier",
+  "description": "Helper for searching / copying tags of Simple Icons.",
   "version": "1.0",
   "action": {
-    "default_popup": "./dist/index.html"
+    "default_popup": "./dist/index.html",
+    "default_title": "Simple Icons Tag Copier"
   },
   "icons": {
     "16": "./public/icon-16.png",
