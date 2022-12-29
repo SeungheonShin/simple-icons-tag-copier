@@ -1,3 +1,5 @@
+import { CopyButtonProps } from '@/interfaces/simpleIconProps.interface';
+import { getTagStr } from '@/utils/icon.util';
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -12,17 +14,10 @@ const Button = styled.button`
   }
 `;
 
-interface CopyButtonProps {
-  title: string;
-  hex: string;
-}
-
 const onClickHandler = async ({
-  title,
-  hex,
+  ...copyButtonProps
 }: CopyButtonProps): Promise<void> => {
-  const tagStr = `<img src="https://img.shields.io/badge/${title}-${hex}?style=flat-square&logo=${title}&logoColor=white"/>`;
-  await navigator.clipboard.writeText(tagStr);
+  await navigator.clipboard.writeText(getTagStr({ ...copyButtonProps }));
 };
 
 export default function CopyButton({

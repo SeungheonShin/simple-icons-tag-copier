@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { SimpleIconProps } from '@/interfaces/simpleIconProps.interface';
-import { svgToDataUrl } from '@/utils/icon.util';
+import { convertSvgToDataUrl } from '@/utils/icon.util';
 import CopyButton from '@/components/CopyButton';
 
 const ItemCard = styled.div`
@@ -11,7 +11,7 @@ const ItemCard = styled.div`
 `;
 
 const Icon = styled.img<{ svg: string }>`
-  content: url(${(props): string => svgToDataUrl(props.svg)});
+  content: url(${(props): string => convertSvgToDataUrl(props.svg)});
 
   padding-right: 10px;
 
