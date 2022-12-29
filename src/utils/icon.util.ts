@@ -1,4 +1,4 @@
-import { CopyButtonProps } from '@/interfaces/simpleIconProps.interface';
+import { CopyButtonProps } from '@/interfaces/simpleIcon.interface';
 
 export const convertSvgToDataUrl = (svg: string): string =>
   `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
