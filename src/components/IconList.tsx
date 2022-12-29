@@ -1,11 +1,15 @@
 import IconItem from '@/components/IconItem';
-import { SimpleIconProps } from '@/interfaces/simpleIconProps.interface';
+import { SimpleIconProps } from '@/interfaces/simpleIcon.interface';
 import styled from 'styled-components';
 
 const IconListGrid = styled.div`
   display: grid;
-  grid-template-columns: 200px 200px;
-  row-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+
+  row-gap: 16px;
+  column-gap: 16px;
+
+  margin: 0 auto;
 `;
 
 export default function IconList({
