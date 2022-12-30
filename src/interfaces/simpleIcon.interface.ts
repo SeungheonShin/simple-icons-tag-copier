@@ -3,8 +3,3 @@ export interface SimpleIconProps {
   hex: string;
   svg: string;
 }
-
-export interface CopyButtonProps {
-  title: string;
-  hex: string;
-}
