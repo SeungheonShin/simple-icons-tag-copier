@@ -1,13 +1,4 @@
-import styled from 'styled-components';
-
-const Button = styled.button`
-  width: 100%;
-  height: 30px;
-
-  text-align: center;
-
-  cursor: pointer;
-`;
+import * as Styles from '@/styles/CopyButton.style';
 
 const onClickHandler = async (hex: string): Promise<void> => {
   await navigator.clipboard.writeText(`#${hex}`);
@@ -15,8 +6,8 @@ const onClickHandler = async (hex: string): Promise<void> => {
 
 export default function CopyButton({ hex }: { hex: string }): JSX.Element {
   return (
-    <Button onClick={(): Promise<void> => onClickHandler(hex)}>
+    <Styles.Button onClick={(): Promise<void> => onClickHandler(hex)}>
       <span>#{hex}</span>
-    </Button>
+    </Styles.Button>
   );
 }

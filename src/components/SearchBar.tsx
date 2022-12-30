@@ -1,12 +1,5 @@
-import styled from 'styled-components';
-
-const TextInput = styled.input.attrs({ type: 'search' })`
-  width: 100%;
-  height: 40px;
-
-  font-size: large;
-`;
+import * as Styles from '@/styles/SearchBar.style';
 
 export default function SearchBar(): JSX.Element {
-  return <TextInput placeholder="search" />;
+  return <Styles.TextInput placeholder="search" />;
 }
