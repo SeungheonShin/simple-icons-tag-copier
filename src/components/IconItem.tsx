@@ -7,10 +7,8 @@ import CopyButton from '@/components/CopyButton';
 import ColorSelectButton from '@/components/ColorSelectButton';
 import * as Styles from '@/styles/IconItem.style';
 
-const onClickHandler = async ({
-  ...copyButtonProps
-}: CopyButtonProps): Promise<void> => {
-  await navigator.clipboard.writeText(getTagStr({ ...copyButtonProps }));
+const onClickHandler = ({ ...copyButtonProps }: CopyButtonProps): void => {
+  navigator.clipboard.writeText(getTagStr({ ...copyButtonProps }));
 };
 
 export default function IconItem({
@@ -20,9 +18,7 @@ export default function IconItem({
 }: SimpleIconProps): JSX.Element {
   return (
     <Styles.ItemCard>
-      <Styles.IconButton
-        onClick={(): Promise<void> => onClickHandler({ title, hex })}
-      >
+      <Styles.IconButton onClick={(): void => onClickHandler({ title, hex })}>
         <Styles.Icon svg={svg} />
         <Styles.Title>{title}</Styles.Title>
       </Styles.IconButton>
