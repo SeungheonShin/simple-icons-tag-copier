@@ -12,22 +12,27 @@ const IconStyleContext = createContext('');
 export default function App(): JSX.Element {
   const [keyword, setKeyword] = useState<string>('');
 
+  const handleKeywordChange = (keyword: string): void => {
+    setKeyword(keyword);
+  };
+
   const simpleIcons: SimpleIconProps[] = Object.values(icons)
+    .slice(0, 100)
+    .filter(({ title }: SimpleIcon) => title.toLowerCase().includes(keyword))
     .map(({ title, hex, svg }: SimpleIcon) => {
       return {
         title,
         hex,
         svg,
       };
-    })
-    .slice(0, 11);
+    });
 
   return (
     <>
       <Styles.GlobalStyle />
       <Styles.MainContent>
         <Styles.Header>
-          <SearchBar />
+          <SearchBar onKeywordChange={handleKeywordChange} />
         </Styles.Header>
 
         <Styles.Section>
