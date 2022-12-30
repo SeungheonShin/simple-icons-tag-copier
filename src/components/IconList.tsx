@@ -10,7 +10,7 @@ export default function IconList({
   return (
     <Styles.IconListGrid>
       {icons.map((props: SimpleIconProps) => (
-        <IconItem {...props} key={props.title} />
+        <IconItem {...props} key={props.slug} />
       ))}
     </Styles.IconListGrid>
   );

@@ -1,4 +1,4 @@
-import { SimpleIconProps } from '@/interfaces/simpleIcon.interface';
+import { IconButtonProps } from '@/interfaces/simpleIcon.interface';
 import * as Styles from '@/styles/IconButton.style';
 import { getTagStr } from '@/utils/icon.util';
 
@@ -16,7 +16,7 @@ export default function IconButton({
   title,
   hex,
   svg,
-}: SimpleIconProps): JSX.Element {
+}: IconButtonProps): JSX.Element {
   return (
     <Styles.IconButton onClick={(): void => onClickHandler({ title, hex })}>
       <Styles.Icon svg={svg} />
