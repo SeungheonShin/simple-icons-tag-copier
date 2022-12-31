@@ -18,7 +18,10 @@ export default function IconButton({
   svg,
 }: IconButtonProps): JSX.Element {
   return (
-    <Styles.IconButton onClick={(): void => onClickHandler({ title, hex })}>
+    <Styles.IconButton
+      onClick={(): void => onClickHandler({ title, hex })}
+      title="copy icon tag"
+    >
       <Styles.Icon svg={svg} />
       <Styles.Title>{title}</Styles.Title>
     </Styles.IconButton>

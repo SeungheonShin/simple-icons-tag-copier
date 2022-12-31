@@ -6,7 +6,10 @@ const onClickHandler = (hex: string): void => {
 
 export default function CopyButton({ hex }: { hex: string }): JSX.Element {
   return (
-    <Styles.Button onClick={(): void => onClickHandler(hex)}>
+    <Styles.Button
+      onClick={(): void => onClickHandler(hex)}
+      title="copy hex code"
+    >
       <span>#{hex}</span>
     </Styles.Button>
   );
