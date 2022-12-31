@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   
   * {
     padding: 0;
+    margin: 0;
   }
   
   body {
@@ -55,6 +56,11 @@ export const Header = styled.header`
 
   padding: 15px 0;
   margin: 0 auto;
+`;
+
+export const Title = styled.p`
+  font-size: 16px;
+  font-weight: 600;
 `;
 
 export const Section = styled.section`

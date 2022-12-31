@@ -54,6 +54,8 @@ export default function App(): JSX.Element {
     <>
       <Styles.GlobalStyle />
       <Styles.MainContent>
+        <Styles.Title>Simple Icons Tag Copier</Styles.Title>
+
         <Styles.Header>
           <SearchBar onKeywordChange={handleKeywordChange} />
         </Styles.Header>
