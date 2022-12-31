@@ -17,6 +17,18 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 
+export const ColorInput = styled.input.attrs({ type: 'color' })`
+  position: absolute;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  opacity: 0;
+
+  cursor: pointer;
+`;
+
 export const Circle = styled.div`
   width: 12px;
   height: 12px;
