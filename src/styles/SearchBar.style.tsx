@@ -6,4 +6,9 @@ export const TextInput = styled.input.attrs({ type: 'search' })`
 
   font-size: large;
   padding-left: 10px;
+
+  &::-webkit-search-cancel-button {
+    position: relative;
+    right: 10px;
+  }
 `;
