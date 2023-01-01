@@ -1,6 +1,6 @@
 import * as Styles from '@/styles/CopyButton.style';
 import { useCallback, useContext } from 'react';
-import { ToastMessageContext } from './App';
+import { ToastMessageContext } from '@/components/App';
 
 export default function CopyButton({ hex }: { hex: string }): JSX.Element {
   const showToastMessage = useContext(ToastMessageContext);

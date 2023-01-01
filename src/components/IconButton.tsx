@@ -2,7 +2,7 @@ import { IconButtonProps } from '@/interfaces/simpleIcon.interface';
 import * as Styles from '@/styles/IconButton.style';
 import { getColoredSvg, getTagStr } from '@/utils/icon.util';
 import { useCallback, useContext } from 'react';
-import { ToastMessageContext } from './App';
+import { ToastMessageContext } from '@/components/App';
 
 export default function IconButton({
   title,
