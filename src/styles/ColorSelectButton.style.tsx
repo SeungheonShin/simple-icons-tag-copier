@@ -5,6 +5,7 @@ export const ButtonBar = styled.div`
 `;
 
 export const Button = styled.button`
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -29,10 +30,11 @@ export const ColorInput = styled.input.attrs({ type: 'color' })`
   cursor: pointer;
 `;
 
-export const Circle = styled.div`
+export const Circle = styled.div<{ color: string }>`
   width: 12px;
   height: 12px;
 
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props): string => props.color};
+  border: 1px solid rgba(0, 0, 0, 0.5);
 `;
