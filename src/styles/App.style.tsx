@@ -99,10 +99,10 @@ export const Toast = styled.div`
 
   &.show {
     visibility: visible;
-    animation: slide-up 0.1s;
+    animation: slide-in 0.1s, slide-out 0.1s 1.5s;
   }
 
-  @keyframes slide-up {
+  @keyframes slide-in {
     from {
       margin-bottom: -30px;
       opacity: 0;
@@ -113,12 +113,14 @@ export const Toast = styled.div`
     }
   }
 
-  @keyframes slide-down {
+  @keyframes slide-out {
     from {
       margin-bottom: 0;
+      opacity: 1;
     }
     to {
       margin-bottom: -30px;
+      opacity: 0;
     }
   }
 `;

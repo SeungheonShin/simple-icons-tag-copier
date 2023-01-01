@@ -28,7 +28,9 @@ const getIcons = (page: number, keyword: string): SimpleIconProps[] => {
   return simpleIcons;
 };
 
-const handleToastMessage = (ref: React.MutableRefObject<HTMLDivElement>) => {
+const handleToastMessage = (
+  ref: React.MutableRefObject<HTMLDivElement>,
+): void => {
   if (!ref || ref.current.classList.contains('show')) return;
   ref.current.classList.add('show');
   setTimeout(() => ref.current.classList.remove('show'), 1000);
