@@ -74,3 +74,51 @@ export const styles = {
   Header,
   Section,
 };
+
+export const Toast = styled.div`
+  visibility: hidden;
+  position: fixed;
+
+  width: 100px;
+  height: 30px;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  margin: 0 auto;
+
+  text-align: center;
+  vertical-align: middle;
+
+  background-color: #5cb85c;
+  border-radius: 5px;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+
+  &.show {
+    visibility: visible;
+    animation: slide-up 0.1s;
+  }
+
+  @keyframes slide-up {
+    from {
+      margin-bottom: -30px;
+      opacity: 0;
+    }
+    to {
+      margin-bottom: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      margin-bottom: 0;
+    }
+    to {
+      margin-bottom: -30px;
+    }
+  }
+`;

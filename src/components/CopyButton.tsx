@@ -1,13 +1,16 @@
 import * as Styles from '@/styles/CopyButton.style';
-
-const onClickHandler = (hex: string): void => {
-  navigator.clipboard.writeText(`#${hex}`);
-};
+import { useCallback, useContext } from 'react';
+import { ToastMessageContext } from './App';
 
 export default function CopyButton({ hex }: { hex: string }): JSX.Element {
+  const showToastMessage = useContext(ToastMessageContext);
+  const onClickHandler = useCallback(async (hex: string) => {
+    await navigator.clipboard.writeText(`#${hex}`);
+    showToastMessage();
+  }, []);
   return (
     <Styles.Button
-      onClick={(): void => onClickHandler(hex)}
+      onClick={async (): Promise<void> => await onClickHandler(hex)}
       title="copy hex code"
     >
       <span>#{hex}</span>

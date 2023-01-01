@@ -9,6 +9,7 @@ import * as Styles from '@/styles/App.style';
 import useInfiniteScroll from '@/hooks/infiniteScroll.hooks';
 
 const IconStyleContext = createContext('');
+export const ToastMessageContext = createContext(null);
 const allIcons: SimpleIcon[] = Object.values(icons);
 const pageOffset = 16 as const;
 
@@ -27,10 +28,18 @@ const getIcons = (page: number, keyword: string): SimpleIconProps[] => {
   return simpleIcons;
 };
 
+const handleToastMessage = (ref: React.MutableRefObject<HTMLDivElement>) => {
+  if (!ref || ref.current.classList.contains('show')) return;
+  ref.current.classList.add('show');
+  setTimeout(() => ref.current.classList.remove('show'), 1000);
+};
+
 export default function App(): JSX.Element {
   const [keyword, setKeyword] = useState<string>('');
   const [iconList, setIconList] = useState<SimpleIconProps[]>([]);
   const intersectionRef = useRef<HTMLDivElement>(null);
+  const toastRef = useRef<HTMLDivElement>(null);
+
   const { page, setPage } = useInfiniteScroll({
     target: intersectionRef,
     rootMargin: '0px',
@@ -62,10 +71,15 @@ export default function App(): JSX.Element {
 
         <Styles.Section>
           <IconStyleContext.Provider value="flat-square">
-            <IconList icons={iconList} />
+            <ToastMessageContext.Provider
+              value={(): void => handleToastMessage(toastRef)}
+            >
+              <IconList icons={iconList} />
+            </ToastMessageContext.Provider>
           </IconStyleContext.Provider>
         </Styles.Section>
         <div ref={intersectionRef}></div>
+        <Styles.Toast ref={toastRef}>Copied!</Styles.Toast>
       </Styles.MainContent>
     </>
   );
