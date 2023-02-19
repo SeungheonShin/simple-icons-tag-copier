@@ -1,6 +1,8 @@
 # simple-icons-tag-copier
 
-markdown 또는 html 작성 시 [simple-icons](https://github.com/simple-icons/simple-icons) 태그를 삽입해주는 chrome extension입니다. (웹스토어 검토중)
+### [Chrome Web Store 링크](https://chrome.google.com/webstore/detail/simple-icons-tag-copier/gcnmmdjdaijjhhlbijloaeenjcjecfan)
+
+markdown 또는 html 작성 시 [simple-icons](https://github.com/simple-icons/simple-icons) 태그를 삽입해주는 chrome extension입니다.
 
 아이콘 데이터는 [npm - simple icons](https://www.npmjs.com/package/simple-icons) v.8.1.0을 사용했습니다.
 
